@@ -65,7 +65,7 @@ public class CompanyController {
 	}
 	
 	@RequestMapping(value = "/industry/{industry}", method = RequestMethod.GET)
-	public @ResponseBody List<Company> getEmployeeByIndustry(@PathVariable String industry) {
+	public @ResponseBody List<Company> getCompaniesByIndustry(@PathVariable String industry) {
 
 		logger.debug("Received request to show all Employees");
 
@@ -73,4 +73,13 @@ public class CompanyController {
 
 		return companies;
 	}
+	
+	@RequestMapping(value = "/industries", method = RequestMethod.GET)
+	public @ResponseBody List<String> getIndustres() {
+
+		List<String> industries = companyService.findIndustries();
+
+		return industries;
+	}
+	
 }

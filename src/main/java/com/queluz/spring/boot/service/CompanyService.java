@@ -58,4 +58,14 @@ public class CompanyService {
 		
 		return companiesList;
 	}
+	
+	public List<String> findIndustries(){
+		List<String> industries = new ArrayList<>();
+		
+		List<Company> companiesList = repository.findDistinctByIndustry();
+		
+		companiesList.forEach(company -> industries.add(company.getIndustry()));
+		
+		return industries;
+	}
 }

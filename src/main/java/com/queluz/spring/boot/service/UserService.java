@@ -83,9 +83,6 @@ public class UserService {
 
 		User user = repository.findOne(Long.valueOf(id));
 
-		// Assign updated values to this person
-		
-		// Save updates
 		repository.save(user);
 	}
 
